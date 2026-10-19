@@ -1,9 +1,11 @@
 
+import styles from "./card.module.css";
+
 type Props = {};
 
 export default function Card({}: Props) {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <h2>Hello World</h2>
       <img
         src="https://picsum.photos/200/300"
@@ -20,20 +22,26 @@ export default function Card({}: Props) {
 
 export function Döner({}: Props) {
   return (
-    <div className="Döner">
+    <div className={styles.döner}>
       <h2>Döner</h2>
       <p>Mein Döner</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/D%C3%B6ner_kebab_slicing.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Döner" />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/ad/D%C3%B6ner_kebab_slicing.jpg"
+        alt="Döner"
+      />
     </div>
   );
 }
 
 export function Pommes({}: Props) {
-    return (
-        <div className="Pommes">
-            <h2>Pommes</h2>
-            <p>Meine Pommes</p>
-            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Belgian_fries_in_Martelange_%2852957190094%29.jpg/960px-Belgian_fries_in_Martelange_%2852957190094%29.jpg?utm_source=de.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Pommes" />
-        </div>
-    );
+  return (
+    <div className={styles.pommes}>
+      <h2>Pommes</h2>
+      <p>Meine Pommes</p>
+      <img
+        src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Belgian_fries_in_Martelange_%2852957190094%29.jpg/960px-Belgian_fries_in_Martelange_%2852957190094%29.jpg"
+        alt="Pommes"
+      />
+    </div>
+  );
 }

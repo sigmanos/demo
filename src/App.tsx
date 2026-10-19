@@ -1,29 +1,25 @@
-import { useState } from "react";
-import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import "./App.css";
+
 import Card, { Döner, Pommes } from "./Card";
+import styles from "./card.module.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-    
-      <h1>Willkomen Osman</h1>
-      <Card />
-      <Card />
-      <Card />
-      <Döner />
-      <Döner />
-      <Döner />
-      <Pommes />  
-      <Pommes />  
-      <Pommes />  
+      <h1 className={styles.title}>Willkommen Osman</h1>
 
+      <div className={styles.cardContainer}>
+        <Card />
+        <Card />
+        <Card />
 
+        <Döner />
+        <Döner />
+        <Döner />
 
+        <Pommes />
+        <Pommes />
+        <Pommes />
+      </div>
     </>
   );
 }
