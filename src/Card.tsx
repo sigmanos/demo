@@ -1,17 +1,23 @@
 
 import styles from "./card.module.css";
 
-type Props = {};
+type Props = {
+    title?: string;
+    text?: string;
+    imgSrc?: string;
 
-export default function Card({}: Props) {
+
+};
+
+export default function Card({title, text,imgSrc}: Props) {
   return (
     <div className={styles.card}>
-      <h2>Hello World</h2>
+      <h2>{title}</h2>
       <img
-        src="https://picsum.photos/200/300"
+        src={imgSrc || "https://picsum.photos/200/300"}
         alt="Beispielbild"
       />
-      <p>Lorem ipsum</p>
+      <p>{text}</p>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
         alt="Flagge von Spanien"
@@ -20,11 +26,11 @@ export default function Card({}: Props) {
   );
 }
 
-export function Döner({}: Props) {
+export function Döner({title, text, imgSrc}: Props) {
   return (
     <div className={styles.döner}>
-      <h2>Döner</h2>
-      <p>Mein Döner</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/a/ad/D%C3%B6ner_kebab_slicing.jpg"
         alt="Döner"
@@ -33,13 +39,13 @@ export function Döner({}: Props) {
   );
 }
 
-export function Pommes({}: Props) {
+export function Pommes({title, text, imgSrc}: Props) {
   return (
     <div className={styles.pommes}>
-      <h2>Pommes</h2>
-      <p>Meine Pommes</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
       <img
-        src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Belgian_fries_in_Martelange_%2852957190094%29.jpg/960px-Belgian_fries_in_Martelange_%2852957190094%29.jpg"
+        src={imgSrc || "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Belgian_fries_in_Martelange_%2852957190094%29.jpg/960px-Belgian_fries_in_Martelange_%2852957190094%29.jpg"}
         alt="Pommes"
       />
     </div>
