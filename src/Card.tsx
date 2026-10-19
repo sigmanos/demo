@@ -27,3 +27,13 @@ export function Döner({}: Props) {
     </div>
   );
 }
+
+export function Pommes({}: Props) {
+    return (
+        <div className="Pommes">
+            <h2>Pommes</h2>
+            <p>Meine Pommes</p>
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Belgian_fries_in_Martelange_%2852957190094%29.jpg/960px-Belgian_fries_in_Martelange_%2852957190094%29.jpg?utm_source=de.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Pommes" />
+        </div>
+    );
+}
