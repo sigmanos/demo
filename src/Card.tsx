@@ -9,14 +9,17 @@ type Props = {
 };
 
 export default function Card({ title, text, imgSrc, imgAlt }: Props) {
-  return (
+  const randomNumber = Math.floor(Math.random() * 1000);
+  
+    return (
     <div className={styles.card}>
       <h2>{title}</h2>
       <img
-        src={imgSrc || "https://picsum.photos/200/300"}
+        src={imgSrc || "https://picsum.photos/200/300?random=" + randomNumber}
         alt={imgAlt || "Beispielbild"}
       />
       <p>{text}</p>
+      <p>{randomNumber}</p>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
         alt="Flagge von Spanien"
