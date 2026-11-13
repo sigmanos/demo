@@ -10,8 +10,13 @@ type Props = {
 
 export default function Card({ title, text, imgSrc, imgAlt }: Props) {
   const randomNumber = Math.floor(Math.random() * 1000);
-  
-    return (
+  const words = ["Sonne", "Wolke", "Apfel", "Fahrrad", "Blume", "Mond", "Kaffee", "Wald"];
+  const randomWords = Array.from(
+    { length: 3 },
+    () => words[Math.floor(Math.random() * words.length)],
+  );
+
+  return (
     <div className={styles.card}>
       <h2>{title}</h2>
       <img
@@ -24,6 +29,7 @@ export default function Card({ title, text, imgSrc, imgAlt }: Props) {
         src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
         alt="Flagge von Spanien"
       />
+      <p>{randomWords.join(" ")}</p>
     </div>
   );
 }
