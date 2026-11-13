@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import styles from "./card.module.css";
 
 type Props = {
@@ -9,9 +10,14 @@ type Props = {
 };
 
 export default function Card({ title, text, imgSrc, imgAlt }: Props) {
-  const randomNumber = Math.floor(Math.random() * 1000);
-  
-    return (
+  const [randomNumber] = useState(() => Math.floor(Math.random() * 1000));
+  const [clickCount, setClickCount] = useState(0);
+
+  function handleClick() {
+    setClickCount((count) => count + 1);
+  }
+
+  return (
     <div className={styles.card}>
       <h2>{title}</h2>
       <img
@@ -20,6 +26,9 @@ export default function Card({ title, text, imgSrc, imgAlt }: Props) {
       />
       <p>{text}</p>
       <p>{randomNumber}</p>
+      <button className={styles.button} onClick={handleClick}>
+        Klicks: {clickCount}
+      </button>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
         alt="Flagge von Spanien"
